@@ -1,22 +1,25 @@
 import React from "react";
 import Typed from "react-typed";
+import Navbar from './Navbar';
 
 const Header = () => {
     return (
         <div className="header-wrapper">
+
+            <Navbar />
             <div className="main-info">
                 <canvas></canvas>
                 <h1>Мы делаем рекламу</h1>
-                <Typed 
+                <Typed
                     className="typed-text"
                     strings={["Производство наружней рекламы",
-                             "Объемные буквы",
-                             "Таблички",
-                             "Баннера",
-                             "Создание логотипов"]}
+                        "Объемные буквы",
+                        "Таблички",
+                        "Баннера",
+                        "Создание логотипов"]}
                     typeSpeed={60}
                     backSpeed={50}
-                    loop 
+                    loop
                 />
                 <a href="#" className="btn-main-offer">Написать нам</a>
             </div>
