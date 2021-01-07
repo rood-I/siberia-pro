@@ -23,7 +23,6 @@ const ClientsCarousel = () => {
 
             <>
                 <img src={logo1} alt="Аскона" />
-                <h3></h3>
             </>
             <>
                 <img src={logo2} alt="Диван Босс" />
