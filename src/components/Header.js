@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import Typed from "react-typed";
 import Navbar from './Navbar';
 
@@ -21,7 +22,7 @@ const Header = () => {
                     backSpeed={50}
                     loop
                 />
-                <a href="#" className="btn-main-offer">Написать нам</a>
+                <Link smooth={true} to="form" href="#" className="btn-main-offer">Написать нам</Link>
             </div>
         </div>
     )

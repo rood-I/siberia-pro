@@ -76,6 +76,10 @@ nav ul li {
   text-transform: uppercase;
 }
 
+ul.navbar-nav.ml-auto {
+  padding-top: 40px;
+}
+
 .navbar-nav > li > a {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
@@ -203,21 +207,21 @@ nav ul li {
 }
 
 /******************************CONTACTS**********************************/
-.contacts {
+.form {
   background: var(--primary-white-smoke) !important;
   padding: 3rem 0;
 }
-.contacts h1 {
+.form h1 {
   color: var(--primary-green);
   padding: 1.3rem 0;
   text-transform: uppercase;
 }
-.contacts p {
+.form p {
   color: var(--primary-black);
   font-size: 1.5rem;
 }
 /*------------------------------INPUTS---------------------------------*/
-.contacts input, .contacts textarea {
+.form input, .form textarea {
   width: 100%;
   box-sizing: border-box;
   background: none;
@@ -232,19 +236,19 @@ nav ul li {
   padding-left: 0 !important;
 }
 
-.contacts .container {
+.form .container {
   padding: 4rem 0;
 }
 
-.contacts input:focus, .contacts textarea:focus {
+.form input:focus, .form textarea:focus {
   background: transparent;
   color: var(--primary-green);
   border-bottom: 0.125rem solid var(--primary-white-smoke);
 }
-.contacts textarea {
+.form textarea {
   height: 12.2rem !important;
 }   
-.contacts-btn {
+.form-btn {
   margin: 1rem 0 0 0;
   width: 100%;
   background: none;
@@ -280,13 +284,34 @@ textarea.form-control{
 }
 /*------------------------------MEDIA---------------------------------*/
 @media(max-width: 768px) {
-  .contacts {
+  .form {
     overflow-x: hidden;
   }
-  .contacts .container {
+  .form .container {
     padding: 0 1rem;
   }
-  .contacts p {
+  .form p {
     padding: 0 0.4rem;
   }
+}
+/******************************FOOTER**********************************/
+
+.footer {
+  background: var(--primary-white);
+  color: var(--primary-black);
+  padding: 3rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--primary-black);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color:  var(--primary-green);
+  cursor: pointer;
+}
+.footer p{
+  margin-bottom: 0;
 }

@@ -1,160 +1,28 @@
-import React, {useState} from "react";
-import emailjs from "emailjs-com";
-import { useForm } from "react-hook-form";
-
+import React from 'react';
 
 const Contacts = () => {
-    const [successMessage, setSuccessMessage] = useState("");
-    const {register,handleSubmit,errors } = useForm();
-
-    const serviceID = "service_ID";
-    const templateID = "template_ID";
-    const userID = "user_ub8PLrDLRCLsUr31CS8lA";
-
-    const onSubmit = (data, r) => {
-        sendEmail(
-            serviceID,
-            templateID,
-            {
-                name:data.name,
-                phone: data.phone,
-                email: data.email,
-                subject: data.subject,
-                description: data.description
-            },
-            userID
-        )
-        r.target.reset();
-    }
-
-    const sendEmail = (serviceID, templateID, variables, userID) => {
-
-        emailjs.send(serviceID, templateID, variables, userID)
-            .then(() => {
-                setSuccessMessage("Письмо успешно отправлено, мы свяжемся с Вами в ближайшее время!");
-            }).catch(err => console.error(`Something went wrong ${err}`));
-    }
-
     return (
-        <div className="contacts">
-            <div className="text-center">
-                <h1>Напишите нам</h1>
-                <p>Заполните форму и опишите ваш заказ. Мы свяжемся с Вами в ближайшее время.</p>
-                <span className="success-message">{successMessage}</span> 
-            </div>
-            <div className="container">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="row">
-                        <div className="col-md-6 col-xs-12">
-                            <div className="text-center" >
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Имя"
-                                    name="name" 
-                                    ref={
-                                        register({
-                                            required:"Введите Ваше имя",
-                                            maxLength: {
-                                                value: 20,
-                                                message: "Максималльная длина 20 знаков"
-                                            }
-                                        })
-                                    }/>
-                                <div className="line"></div>
-                            </div>
-                            <span className="error-message">
-                                {errors.name && errors.name.message}
-                            </span>
-                            <div className="text-center" >
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Номер телефона"
-                                    name="phone" 
-                                    ref={
-                                        register({
-                                            required:"Введите Ваш номер телефона",
-                                            maxLength: {
-                                                value: 11,
-                                                message: "Максималльная длина 11 знаков"
-                                            }
-                                        })
-                                    }/>
-                                <div className="line"></div>
-                            </div>
-                            <span className="error-message">
-                                {errors.phone && errors.phone.message}
-                            </span>
-                            <div className="text-center" >
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="E-mail"
-                                    nmae="email" 
-                                    ref={
-                                        register({
-                                            required:"Введите Ваш email",
-                                            pattern: {
-                                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                message: "Неверный email"
-                                            }
-                                        })
-                                    }/>
-                                <div className="line"></div>
-                            </div>
-                            <span className="error-message">
-                                {errors.email && errors.email.message}
-                            </span>
-                            <div className="text-center" >
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Тема"
-                                    name="subject" 
-                                    ref={
-                                        register({
-                                            required:"Вы забыли указать тему письма",
-                                            maxLength: {
-                                                value: 50,
-                                                message: "Максималльная длина 50 знаков"
-                                            }
-                                        })
-                                    }/>
-                                <div className="line"></div>
-                            </div>
-                            <span className="error-message">
-                                {errors.subject && errors.subject.message}
-                            </span>
-                        </div>
-                        <div className="col-md-6 col-xs-12">
-                            <div className="text-center" >
-                                <textarea
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Опишите Ваш заказ"
-                                    name="description"
-                                    ref={
-                                        register({
-                                            required:"Коротко укажите, что бы Вы хотели видеть в заказе?",
-                                            maxLength: {
-                                                value: 100,
-                                                message: "Максималльная длина 100 знаков"
-                                            }
-                                        })
-                                    }></textarea>
-                                <div className="line"></div>
-                            </div>
-                            <span className="error-message">
-                                {errors.description && errors.description.message}
-                            </span>
-                            <button className="btn-main-offer contacts-btn" type="submit">Отправить письмо</button>
-                        </div>
-                    </div>
-                </form>
+        <div id="contacts" className="contacts">
+            <div class="container">
+                <div class="row">
+                    <div id="filials">
+                        <div class="f-name">Новокузнецк</div>
+                        <div class="f-info">
+                            <div class="tit"> Контакты:</div>
+                            <p>ул. Академика Павлова, д.25</p>
+                            <p class="phone">
+                                <a href="tel:+74957378717">+7 (495) 737-87-17 </a><br/>
+                                <a href="tel:+2499"> Пресс-служба: доб. 2499</a><br/>
+                            </p>
+                            <div class="tit">Режим работы:</div>
+                            <p class="line ">10:00 - 19:00</p>  
+                        </div>           
+                     </div>
+                </div>
             </div>
         </div>
-    )
+)
 }
 
 export default Contacts
+
